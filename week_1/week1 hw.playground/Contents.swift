@@ -199,17 +199,18 @@ if isRaining {
     print("Although it’s sunny, I still don’t want to work today.")
 }
 //Control Flow 7
-
-var jobLevel = 4
+var jobLevel = 1
 switch jobLevel {
 case 1:
-    print("We don’t have this job")
+    print("Member")
 case 2:
-    print("We don’t have this job")
+    print("Team Leader")
 case 3:
-    print("We don’t have this job")
-default:
+    print("Manager")
+case 4:
     print("Director")
+default:
+    print("We don't have this job.")
 }
 
 
