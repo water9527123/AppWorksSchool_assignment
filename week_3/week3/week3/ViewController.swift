@@ -35,8 +35,22 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func btn1(_ sender: Any) {
-
-       if accountField.text?.isEmpty == true {
+//-------------------------------Sign up SUCESS
+        if accountField.text?.isEmpty == false && passwordField.text?.isEmpty == false && textField01.text == passwordField.text {
+           let controller = UIAlertController(title: "Sucess!", message: "Sign up sucess.", preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           controller.addAction(okAction)
+           present(controller, animated: true, completion: nil)
+        }
+//-------------------------------Log in SUCESS
+        else if accountField.text == "appworks_school@gmail.com" && passwordField.text == "1234" && textField01.text?.isEmpty == true {
+           let controller = UIAlertController(title: "Sucess!", message: "Log in sucess.", preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           controller.addAction(okAction)
+           present(controller, animated: true, completion: nil)
+        }
+// -----------------------------empty
+       else if accountField.text?.isEmpty == true {
            let controller = UIAlertController(title: "ERROR!", message: "Account should not be empty.", preferredStyle: .alert)
            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
            controller.addAction(okAction)
@@ -54,13 +68,14 @@ class ViewController: UIViewController {
            controller.addAction(okAction)
            present(controller, animated: true, completion: nil)
         }
-        else if accountField.text != "appworks_school@gmail.com",textField01.text?.isEmpty == false {
+//-----------------------------login fail
+        else if accountField.text != "appworks_school@gmail.com" && textField01.text?.isEmpty == true {
            let controller = UIAlertController(title: "ERROR!", message: "Login fail.", preferredStyle: .alert)
            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
            controller.addAction(okAction)
            present(controller, animated: true, completion: nil)
         }
-        else if passwordField.text != "1234",textField01.text?.isEmpty == false {
+        else if passwordField.text != "1234" && textField01.text?.isEmpty == false {
            let controller = UIAlertController(title: "ERROR!", message: "Login fail.", preferredStyle: .alert)
            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
            controller.addAction(okAction)
